@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    frontend:
+        image: angular8:node12.13-alpine3.10
+        ports : 
+            - "4200:4200"
+        stdin_open: true
+        tty: true
+        volumes: 
+            - /cheminDuProjetLocal:/home/app

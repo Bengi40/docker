@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+    frontend:
+        image: angular8:node12.13-alpine3.10
+        ports: 
+            - "4200:4200"
+        stdin_open: true
+        tty: true
+        links:   
+            - backend
+        volumes: 
+            - /home/bengi/Projets/newProjet/front:/home/app
+    backend:
+        image: openjdk:8u171-jdk-alpine3.7
+        ports: 
+            - "3000:3000"
+        stdin_open: true
+        tty: true
+        links:  
+            - bdd
+        volumes: 
+            - /home/bengi/Projets/newProjet/back:/home/app
+    bdd:
+        image: mysql
+        ports: 
+            - "3306:3306"
+        environment:
+            - "MYSQL_ROOT_PASSWORD="
+            - "MYSQL_USER="
+            - "MYSQL_PASSWORD="
+            - "MYSQL_DATABASE="
+        volumes: 
+            - /home/bengi/Projets/newProjet/bdd:/var/lib/mysql
+
