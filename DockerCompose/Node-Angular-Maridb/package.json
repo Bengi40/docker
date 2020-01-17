@@ -1,0 +1,14 @@
+{
+    "name": "my-app",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+      "ejs": "latest",
+      "express": "latest",
+      "body-parser": "latest",
+      "mariadb": "2.1.4"
+    },
+    "scripts": {
+      "start": "node app.js"
+    }
+  }
